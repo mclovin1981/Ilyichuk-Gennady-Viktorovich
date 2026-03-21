@@ -31,6 +31,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -38,6 +40,9 @@ body {
   background: var(--surface);
   color: var(--gray);
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   cursor: none;
 }
 
@@ -137,6 +142,8 @@ body:has(button:hover) .cursor {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 48px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-label {
@@ -277,7 +284,7 @@ body:has(button:hover) .cursor {
 .mobile-menu {
   position: fixed;
   top: 0; right: -100%;
-  width: 280px;
+  width: min(280px, 100vw);
   height: 100%;
   background: var(--gray);
   z-index: 490;
@@ -288,6 +295,7 @@ body:has(button:hover) .cursor {
   padding: 80px 40px;
   gap: 28px;
   transition: right 0.4s var(--ease-out);
+  overflow-x: hidden;
 }
 .mobile-menu.open { right: 0; }
 .mob-link {
@@ -325,6 +333,8 @@ body:has(button:hover) .cursor {
   position: relative;
   overflow: hidden;
   gap: 60px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero-bg-text {
@@ -548,6 +558,8 @@ body:has(button:hover) .cursor {
   z-index: 1;
   display: flex;
   justify-content: center;
+  overflow: visible;
+  min-width: 0;
 }
 
 .hero-img-wrap {
@@ -656,6 +668,9 @@ body:has(button:hover) .cursor {
 [data-reveal], [data-reveal-left], [data-reveal-right], [data-tl], [data-spec], [data-stat] {
   opacity: 0;
   transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 [data-reveal]       { transform: translateY(40px); }
 [data-reveal-left]  { transform: translateX(-50px); }
