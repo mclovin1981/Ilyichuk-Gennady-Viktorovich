@@ -17,10 +17,21 @@ const cursorFollower = document.getElementById('cursorFollower');
 //  LOADER
 // ══════════════════════════════════════════════
 function hideLoader() {
+  // Use requestAnimationFrame to ensure DOM is painted before reveal check
   setTimeout(() => {
     loader.classList.add('hide');
-    startHeroReveal();
-  }, 1600);
+    // Small delay so CSS transition finishes before we trigger reveals
+    setTimeout(() => {
+      startHeroReveal();
+      // Re-trigger reveal for any elements now visible after loader hides
+      document.querySelectorAll('[data-reveal],[data-reveal-left],[data-reveal-right],[data-tl],[data-spec],[data-stat]').forEach((el, i) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && !el.classList.contains('revealed')) {
+          setTimeout(() => el.classList.add('revealed'), 200 + i * 60);
+        }
+      });
+    }, 100);
+  }, 1400);
 }
 
 // ══════════════════════════════════════════════
@@ -122,25 +133,44 @@ function initReveal() {
 
   const elements = document.querySelectorAll(selectors.join(', '));
 
+  // Immediately reveal elements already in viewport on load
+  function revealIfVisible(el, delay) {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setTimeout(() => el.classList.add('revealed'), delay);
+      return true;
+    }
+    return false;
+  }
+
+  // Use low threshold + no rootMargin so mobile browsers trigger correctly
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       const el = entry.target;
 
       // stagger siblings of same type
-      const siblings = [...el.parentElement.children].filter(c => c.hasAttribute(el.getAttributeNames().find(a => a.startsWith('data-')) || ''));
-      const idx = siblings.indexOf(el);
+      const attrName = el.getAttributeNames().find(a => a.startsWith('data-'));
+      const siblings = attrName
+        ? [...el.parentElement.children].filter(c => c.hasAttribute(attrName))
+        : [];
+      const idx = Math.max(0, siblings.indexOf(el));
       const delay = idx * 80;
 
       setTimeout(() => el.classList.add('revealed'), delay);
       io.unobserve(el);
     });
   }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px',
+    threshold: 0,
+    rootMargin: '0px 0px -20px 0px',
   });
 
-  elements.forEach(el => io.observe(el));
+  elements.forEach((el, i) => {
+    // Check if already visible (hero elements, first section)
+    if (!revealIfVisible(el, i * 60)) {
+      io.observe(el);
+    }
+  });
 }
 
 // ══════════════════════════════════════════════
