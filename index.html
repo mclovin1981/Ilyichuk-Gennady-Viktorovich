@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Геннадий Ильичук — Персональный тренер</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <span class="loader-text">ЗАГРУЗКА</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-first">Г</span><span class="logo-rest">еннадий</span>
+      <span class="logo-sep">·</span>
+      <span class="logo-last">Ильичук</span>
+    </div>
+    <div class="nav-center">
+      <a href="#about" class="nav-link">О тренере</a>
+      <a href="#credentials" class="nav-link">Опыт</a>
+      <a href="#specializations" class="nav-link">Тренировки</a>
+      <a href="#location" class="nav-link">Контакты</a>
+    </div>
+    <a href="tel:+79514009304" class="nav-cta">
+      <span>Записаться</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mob-link">О тренере</a>
+    <a href="#credentials" class="mob-link">Опыт</a>
+    <a href="#specializations" class="mob-link">Тренировки</a>
+    <a href="#location" class="mob-link">Контакты</a>
+    <a href="tel:+79514009304" class="mob-cta">+7 (951) 400-93-04</a>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero">
+    <div class="hero-bg-text">ТРЕНЕР</div>
+
+    <div class="hero-left">
+      <div class="hero-tag" data-reveal>
+        <span class="tag-dot"></span>
+        Старший тренер ЦСД «Амбассадор»
+      </div>
+
+      <h1 class="hero-heading" data-reveal>
+        <span class="line">Геннадий</span>
+        <span class="line accent-line">Ильичук</span>
+      </h1>
+
+      <p class="hero-sub" data-reveal>
+        КМС по силовому троеборью · Персональный тренер · 30+ лет в спорте
+      </p>
+
+      <blockquote class="hero-quote" data-reveal>
+        «Любите свою фигуру больше, чем вкусную еду!»
+      </blockquote>
+
+      <div class="hero-actions" data-reveal>
+        <a href="tel:+79514009304" class="btn-primary">
+          <span>Записаться на тренировку</span>
+          <div class="btn-shine"></div>
+        </a>
+        <a href="#about" class="btn-ghost">Узнать больше</a>
+      </div>
+
+      <div class="hero-numbers" data-reveal>
+        <div class="h-num">
+          <strong>30<sup>+</sup></strong>
+          <span>лет в спорте</span>
+        </div>
+        <div class="h-divider"></div>
+        <div class="h-num">
+          <strong>15<sup>+</sup></strong>
+          <span>лет в «Амбассадоре»</span>
+        </div>
+        <div class="h-divider"></div>
+        <div class="h-num">
+          <strong>КМС</strong>
+          <span>силовое троеборье</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-img-wrap" data-reveal-right>
+        <div class="img-ring ring-1"></div>
+        <div class="img-ring ring-2"></div>
+        <div class="hero-badge-card">
+          <span class="badge-icon">🏆</span>
+          <div>
+            <strong>Призёр</strong>
+            <small>Армрестлинг, Москва 2006</small>
+          </div>
+        </div>
+        <img id="heroPhoto" src="gennady.jpg" alt="Геннадий Ильичук — Тренер" class="hero-photo" />
+        <div class="img-grain"></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Скролл</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label" data-reveal>— О тренере</div>
+      <div class="about-grid">
+        <div class="about-photo-col" data-reveal-left>
+          <div class="about-img-wrap">
+            <img id="gymPhoto" src="gym.jpg" alt="Геннадий Ильичук в зале" />
+            <div class="about-img-overlay">
+              <span class="overlay-text">АМБАССАДОР</span>
+            </div>
+          </div>
+          <div class="about-pill">
+            <span>Высшее образование</span>
+            <strong>СибГУФКС</strong>
+          </div>
+        </div>
+
+        <div class="about-content" data-reveal-right>
+          <h2 class="section-title">
+            Кто такой<br />
+            <em>Геннадий Викторович?</em>
+          </h2>
+
+          <p class="about-lead">
+            Старший тренер ЦСД «Амбассадор», кандидат в мастера спорта по силовому троеборью, сертифицированный инструктор тренажёрного зала 1 и 2 категории.
+          </p>
+
+          <p class="about-body">
+            Высшее образование — <strong>Сибирский государственный университет физической культуры и спорта</strong>. Также окончил РГУФКСиТ, факультет циклических видов спорта. С 2008 года по настоящее время работает тренером ЦСД «Амбассадор».
+          </p>
+
+          <p class="about-body">
+            Геннадий Викторович работает с клиентами любого уровня — от новичков до профессиональных спортсменов. Его программы <strong>реально работают</strong>: результат виден уже через несколько недель. Под его руководством вы быстро достигнете своих целей, будь то похудение, набор массы или улучшение физической формы.
+          </p>
+
+          <div class="about-features">
+            <div class="af-item">
+              <div class="af-icon">✦</div>
+              <span>Индивидуальная программа</span>
+            </div>
+            <div class="af-item">
+              <div class="af-icon">✦</div>
+              <span>Научный подход</span>
+            </div>
+            <div class="af-item">
+              <div class="af-icon">✦</div>
+              <span>Контроль питания</span>
+            </div>
+            <div class="af-item">
+              <div class="af-icon">✦</div>
+              <span>Постоянная поддержка</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CREDENTIALS ═══════════════ -->
+  <section id="credentials">
+    <div class="cred-bg-word">ПУТЬ</div>
+    <div class="container">
+      <div class="section-label light" data-reveal>— Биография и опыт</div>
+      <h2 class="section-title light" data-reveal>
+        Профессиональный<br /><em>путь</em>
+      </h2>
+
+      <div class="timeline">
+        <div class="tl-spine"></div>
+
+        <div class="tl-item" data-tl>
+          <div class="tl-dot"></div>
+          <div class="tl-year">1993</div>
+          <div class="tl-card">
+            <h4>Начало карьеры</h4>
+            <p>Консультант тренажёрного зала при школе Олимпийского резерва.</p>
+          </div>
+        </div>
+
+        <div class="tl-item" data-tl>
+          <div class="tl-dot"></div>
+          <div class="tl-year">1995 – 2002</div>
+          <div class="tl-card">
+            <h4>РГУФКСиТ</h4>
+            <p>Факультет циклических видов спорта. Специалист по физической культуре и спорту.</p>
+          </div>
+        </div>
+
+        <div class="tl-item" data-tl>
+          <div class="tl-dot"></div>
+          <div class="tl-year">2002</div>
+          <div class="tl-card">
+            <h4>Семинар Ю.Б. Буланова</h4>
+            <p>Питание спортсменов, сжигание жира, спортивная медицина.</p>
+          </div>
+        </div>
+
+        <div class="tl-item" data-tl>
+          <div class="tl-dot"></div>
+          <div class="tl-year">2003 – 2005</div>
+          <div class="tl-card">
+            <h4>Персональный тренер МГТС</h4>
+            <p>Инструктор тренажёрного зала и персональный тренер в тренажёрном зале при МГТС.</p>
+          </div>
+        </div>
+
+        <div class="tl-item" data-tl>
+          <div class="tl-dot orange"></div>
+          <div class="tl-year">2006</div>
+          <div class="tl-card highlight">
+            <div class="card-badge">🏆 Достижение</div>
+            <h4>Призёр по армрестлингу</h4>
+            <p>Соревнования в г. Москва. Подтверждение высокого спортивного класса.</p>
+          </div>
+        </div>
+
+        <div class="tl-item" data-tl>
+          <div class="tl-dot green"></div>
+          <div class="tl-year">2008 — сейчас</div>
+          <div class="tl-card highlight-green">
+            <div class="card-badge green-badge">⭐ Настоящее</div>
+            <h4>Старший тренер «Амбассадор»</h4>
+            <p>Более 15 лет успешной работы с клиентами в одном из лучших фитнес-центров Омска.</p>
+          </div>
+        </div>
+
+        <div class="tl-item" data-tl>
+          <div class="tl-dot"></div>
+          <div class="tl-year">Сертификаты</div>
+          <div class="tl-card">
+            <h4>Квалификация</h4>
+            <p>Инструктор тренажёрного зала 1 и 2 категории. КМС по силовому троеборью.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SPECIALIZATIONS ═══════════════ -->
+  <section id="specializations">
+    <div class="container">
+      <div class="section-label" data-reveal>— Направления</div>
+      <h2 class="section-title" data-reveal>
+        Тренировки под<br /><em>вашу цель</em>
+      </h2>
+
+      <div class="spec-grid">
+        <div class="spec-card card-wide" data-spec>
+          <div class="spec-number">01</div>
+          <div class="spec-icon-wrap orange-grad">
+            <span>🏆</span>
+          </div>
+          <h3>Бодибилдинг</h3>
+          <p>Профессиональное построение тела: проработка каждой группы мышц, визуальный баланс и симметрия. Ваш путь к идеальной форме.</p>
+          <div class="spec-arrow">→</div>
+        </div>
+
+        <div class="spec-card" data-spec>
+          <div class="spec-number">02</div>
+          <div class="spec-icon-wrap green-grad">
+            <span>⚡</span>
+          </div>
+          <h3>Выносливость</h3>
+          <p>Комплексные программы для повышения сердечно-сосудистой и мышечной выносливости.</p>
+          <div class="spec-arrow">→</div>
+        </div>
+
+        <div class="spec-card" data-spec>
+          <div class="spec-number">03</div>
+          <div class="spec-icon-wrap orange-grad">
+            <span>💪</span>
+          </div>
+          <h3>Сила</h3>
+          <p>Опыт КМС по троеборью в ваших результатах. Научные методики и гарантированный рост показателей.</p>
+          <div class="spec-arrow">→</div>
+        </div>
+
+        <div class="spec-card" data-spec>
+          <div class="spec-number">04</div>
+          <div class="spec-icon-wrap green-grad">
+            <span>🎯</span>
+          </div>
+          <h3>Персональные</h3>
+          <p>Индивидуальная программа под ваши цели, возможности и образ жизни.</p>
+          <div class="spec-arrow">→</div>
+        </div>
+
+        <div class="spec-card" data-spec>
+          <div class="spec-number">05</div>
+          <div class="spec-icon-wrap orange-grad">
+            <span>🥗</span>
+          </div>
+          <h3>Питание</h3>
+          <p>Консультации по питанию и добавкам на основе семинара Буланова и личного опыта.</p>
+          <div class="spec-arrow">→</div>
+        </div>
+
+        <div class="spec-card card-wide dark-card" data-spec>
+          <div class="spec-number">06</div>
+          <div class="spec-icon-wrap neutral-grad">
+            <span>🔰</span>
+          </div>
+          <h3>Для новичков</h3>
+          <p>Бережный вход в тренировочный процесс. Правильная техника, мотивация и уверенность с первого занятия. Никаких лишних страхов!</p>
+          <div class="spec-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WHY ═══════════════ -->
+  <section id="why">
+    <div class="container">
+      <div class="why-inner">
+        <div class="why-text" data-reveal>
+          <div class="section-label">— Почему именно он</div>
+          <h2 class="section-title">
+            Результаты —<br /><em>его приоритет</em>
+          </h2>
+          <p class="why-desc">
+            Геннадий Викторович — это не просто тренер, это наставник, который вкладывает душу в каждого клиента. Его подход объединяет строгую науку, богатый соревновательный опыт и искреннюю заботу о вашем прогрессе.
+          </p>
+          <a href="tel:+79514009304" class="btn-primary">Начать трансформацию</a>
+        </div>
+
+        <div class="why-stats">
+          <div class="ws-card" data-stat>
+            <div class="ws-num" data-count="30">0</div>
+            <div class="ws-plus">+</div>
+            <div class="ws-label">Лет в спорте</div>
+          </div>
+          <div class="ws-card" data-stat>
+            <div class="ws-num" data-count="15">0</div>
+            <div class="ws-plus">+</div>
+            <div class="ws-label">Лет в «Амбассадоре»</div>
+          </div>
+          <div class="ws-card accent-card" data-stat>
+            <div class="ws-num-text">КМС</div>
+            <div class="ws-label">Силовое троеборье</div>
+          </div>
+          <div class="ws-card" data-stat>
+            <div class="ws-num" data-count="100">0</div>
+            <div class="ws-plus">%</div>
+            <div class="ws-label">Индивидуальный подход</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ LOCATION ═══════════════ -->
+  <section id="location">
+    <div class="container">
+      <div class="section-label" data-reveal>— Где найти</div>
+      <h2 class="section-title" data-reveal>Расположение <em>и контакты</em></h2>
+
+      <div class="loc-grid">
+        <div class="loc-info" data-reveal>
+          <div class="loc-card">
+            <div class="loc-card-icon" style="background: var(--orange)">📍</div>
+            <div>
+              <strong>Адрес</strong>
+              <span>ул. Красный Путь, 59, г. Омск</span>
+              <small>ЦСД «Амбассадор»</small>
+            </div>
+          </div>
+          <div class="loc-card">
+            <div class="loc-card-icon" style="background: var(--green)">📞</div>
+            <div>
+              <strong>Телефон</strong>
+              <a href="tel:+79514009304">+7 (951) 400-93-04</a>
+              <small>Запись на тренировку</small>
+            </div>
+          </div>
+          <div class="loc-card">
+            <div class="loc-card-icon" style="background: var(--gray-mid)">🕐</div>
+            <div>
+              <strong>Режим работы</strong>
+              <span>Ежедневно</span>
+              <small>Расписание — по телефону</small>
+            </div>
+          </div>
+
+          <a href="tel:+79514009304" class="btn-primary full-btn">
+            <span>Позвонить и записаться</span>
+            <div class="btn-shine"></div>
+          </a>
+        </div>
+
+        <div class="loc-map" data-reveal-right>
+          <div class="map-frame">
+            <iframe
+              src="https://maps.google.com/maps?q=%D1%83%D0%BB.+%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9+%D0%9F%D1%83%D1%82%D1%8C+59+%D0%9E%D0%BC%D1%81%D0%BA&output=embed&z=16"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="ЦСД Амбассадор, Омск">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <section id="cta">
+    <div class="cta-bg-circle c1"></div>
+    <div class="cta-bg-circle c2"></div>
+    <div class="container cta-inner" data-reveal>
+      <h2 class="cta-heading">
+        Готовы начать<br />
+        <span>трансформацию?</span>
+      </h2>
+      <p class="cta-sub">Запишитесь прямо сейчас и сделайте первый шаг к лучшей версии себя.</p>
+      <a href="tel:+79514009304" class="btn-cta-big">
+        <span>+7 (951) 400-93-04</span>
+        <div class="btn-shine"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">Геннадий Ильичук</div>
+      <p>Персональный тренер · ЦСД «Амбассадор», Омск</p>
+      <p class="footer-small">© 2024 · Сайт носит информационный характер</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
